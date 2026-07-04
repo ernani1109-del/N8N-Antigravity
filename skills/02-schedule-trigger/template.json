@@ -1,0 +1,56 @@
+{
+  "name": "Scheduled Run",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "id": "00000000-0000-4000-8000-000002000001",
+      "name": "Every day at 08:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "00000000-0000-4000-8000-000002000002",
+      "name": "Do work",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        240,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Every day at 08:00": {
+      "main": [
+        [
+          {
+            "node": "Do work",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true
+  }
+}

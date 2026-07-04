@@ -1,0 +1,72 @@
+{
+  "name": "Field Mapping",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "00000000-0000-4000-8000-000005000001",
+      "name": "When clicking \"Test workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "assignments": {
+          "assignments": [
+            {
+              "id": "00000000-0000-4000-8000-000005000003",
+              "name": "id",
+              "type": "string",
+              "value": "={{ $json.id }}"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000005000004",
+              "name": "amount",
+              "type": "number",
+              "value": "={{ $json.amount }}"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000005000005",
+              "name": "active",
+              "type": "boolean",
+              "value": "={{ $json.status === \"open\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "00000000-0000-4000-8000-000005000002",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        240,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "When clicking \"Test workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true
+  }
+}

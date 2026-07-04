@@ -1,0 +1,55 @@
+{
+  "version": "1.x",
+  "rules": [
+    {
+      "id": "single-trigger",
+      "severity": "error",
+      "check": "Exactly one *Trigger node exists."
+    },
+    {
+      "id": "all-reachable",
+      "severity": "error",
+      "check": "Every non-trigger node is reachable via connections from the trigger."
+    },
+    {
+      "id": "no-orphans",
+      "severity": "warn",
+      "check": "No node is absent from the connections graph."
+    },
+    {
+      "id": "unique-names",
+      "severity": "error",
+      "check": "Node names are unique."
+    },
+    {
+      "id": "meaningful-names",
+      "severity": "warn",
+      "check": "No default names like \"HTTP Request1\", \"NoOp\"."
+    },
+    {
+      "id": "execution-order-v1",
+      "severity": "error",
+      "check": "settings.executionOrder === 'v1'."
+    },
+    {
+      "id": "no-deprecated-nodes",
+      "severity": "warn",
+      "check": "No types listed in skill 20 mapping.json."
+    },
+    {
+      "id": "no-embedded-secrets",
+      "severity": "error",
+      "check": "No tokens/passwords/keys hardcoded in parameters."
+    },
+    {
+      "id": "typeversion-set",
+      "severity": "warn",
+      "check": "Every node declares an explicit typeVersion."
+    },
+    {
+      "id": "error-handling",
+      "severity": "warn",
+      "check": "Error Workflow configured or Continue/Retry On Fail used on fallible nodes."
+    }
+  ]
+}

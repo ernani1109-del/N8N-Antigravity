@@ -1,0 +1,50 @@
+{
+  "note": "Deprecated/legacy node type -> recommended n8n v1.x replacement. Parameters must be re-created; shapes differ.",
+  "mappings": [
+    {
+      "from": "n8n-nodes-base.cron",
+      "to": "n8n-nodes-base.scheduleTrigger",
+      "reason": "Cron node deprecated in favour of Schedule Trigger."
+    },
+    {
+      "from": "n8n-nodes-base.function",
+      "to": "n8n-nodes-base.code",
+      "reason": "Function node replaced by Code node (Run Once for All Items)."
+    },
+    {
+      "from": "n8n-nodes-base.functionItem",
+      "to": "n8n-nodes-base.code",
+      "reason": "FunctionItem replaced by Code node (Run Once for Each Item)."
+    },
+    {
+      "from": "n8n-nodes-base.start",
+      "to": "n8n-nodes-base.manualTrigger",
+      "reason": "Legacy Start node replaced by Manual Trigger."
+    },
+    {
+      "from": "n8n-nodes-base.set (v1/v2)",
+      "to": "n8n-nodes-base.set (v3.x)",
+      "reason": "Set node redesigned as Edit Fields with typed assignments."
+    },
+    {
+      "from": "n8n-nodes-base.if (v1)",
+      "to": "n8n-nodes-base.if (v2.x)",
+      "reason": "IF node conditions restructured with strict type validation."
+    },
+    {
+      "from": "n8n-nodes-base.switch (v1/v2)",
+      "to": "n8n-nodes-base.switch (v3.x)",
+      "reason": "Switch node rules mode restructured."
+    },
+    {
+      "from": "n8n-nodes-base.itemLists",
+      "to": "n8n-nodes-base.aggregate / sort / limit / removeDuplicates / splitOut",
+      "reason": "Item Lists split into focused data-transformation nodes."
+    },
+    {
+      "from": "n8n-nodes-base.httpRequest (v1-v3)",
+      "to": "n8n-nodes-base.httpRequest (v4.x)",
+      "reason": "HTTP Request node parameters restructured in v4."
+    }
+  ]
+}
