@@ -1,7 +1,8 @@
 # n8n v1.x Workflow Automation Skills
 
-21 **deterministic** building blocks for automating [n8n](https://n8n.io) v1.x
-workflows. Each skill is a self-contained folder with:
+22 **deterministic** building blocks for automating [n8n](https://n8n.io) v1.x
+workflows (21 focused skills plus one end-to-end reference pipeline). Each skill
+is a self-contained folder with:
 
 - a **playbook** (`README.md`): purpose, when to use, a step-by-step
   deterministic procedure, a parameter reference, and a validation checklist;
@@ -38,6 +39,7 @@ the same way every time. Re-running the generator produces byte-identical files.
 | 19 | [Workflow Validation Ruleset](./19-workflow-validate/) | Governance & quality | `(analysis — no runtime node)` |
 | 20 | [Migrate Deprecated Nodes](./20-migrate-deprecated-nodes/) | Governance & quality | `(analysis — no runtime node)` |
 | 21 | [Auto-document a Workflow](./21-document-workflow/) | Governance & quality | `(analysis — no runtime node)` |
+| 22 | [Workflow Road (End-to-end Reference Pipeline)](./22-workflow-road/) | Reference pipelines | `n8n-nodes-base.webhook` |
 
 ## Categories
 
@@ -46,6 +48,7 @@ the same way every time. Re-running the generator produces byte-identical files.
 - **Data transformation** — Aggregate Items, Sort & Limit, Remove Duplicates, Code Node Transform
 - **Reliability & ops** — Error Workflow (Error Trigger), Retry with Backoff, Throttle with Wait, Modular Sub-workflow Call
 - **Governance & quality** — Workflow Validation Ruleset, Migrate Deprecated Nodes, Auto-document a Workflow
+- **Reference pipelines** — Workflow Road (End-to-end Reference Pipeline)
 
 ## Using a template
 
