@@ -101,3 +101,26 @@ requiring a global plugin install:
   `hooks/`) rather than editing skill files in place.
 - Antigravity users can alternatively install upstream directly with
   `agy plugin install https://github.com/obra/superpowers`.
+
+## External plugins
+
+`.claude/settings.json` also declares `enabledPlugins` from Anthropic's
+official marketplace (`claude-plugins-official`, added automatically by
+Claude Code — no `extraKnownMarketplaces` entry needed):
+
+- **`github@claude-plugins-official`** — official GitHub MCP server
+  (issues, PRs, code review, repo search) for environments that don't
+  already provide GitHub tools natively.
+- **`security-guidance@claude-plugins-official`** — pattern-based warnings
+  on edits plus an LLM-powered diff/commit review for injection, XSS,
+  SSRF, hardcoded secrets, and other vulnerability classes, reinforcing
+  the security guidance above.
+
+Each team member is still prompted to install and trust these individually
+the first time they open the repo (Claude Code v2.1.195+); `enabledPlugins`
+only declares the project's intent, it doesn't silently install anything.
+To add another plugin from the official marketplace, add its
+`"name@claude-plugins-official": true` entry; for a plugin from a
+non-default marketplace, also add that marketplace under
+`extraKnownMarketplaces` (see the [plugin settings
+docs](https://code.claude.com/docs/en/settings#plugin-configuration)).
