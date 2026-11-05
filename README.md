@@ -4,6 +4,14 @@ A Node.js/TypeScript starter project.
 
 ## Getting started
 
+Run the setup script to install dependencies and create a local `.env`:
+
+```bash
+./install.sh
+```
+
+Or set up manually:
+
 ```bash
 npm install
 npm run dev     # run src/index.ts with live reload
