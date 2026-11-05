@@ -77,3 +77,28 @@ verification available.
   task runner without reason.
 - If you add real dependencies (frameworks, HTTP clients, etc.), update the
   "Stack" section above so this file stays accurate.
+
+## Superpowers skills (vendored)
+
+This repo vendors the [Superpowers](https://github.com/obra/superpowers) skill
+library under `.claude/` so the skills travel with the project instead of
+requiring a global plugin install:
+
+```
+.claude/
+  skills/          # 14 skills (TDD, systematic-debugging, brainstorming, …)
+  hooks/           # session-start hook + cross-platform run-hook.cmd wrapper
+  settings.json    # registers the SessionStart hook
+```
+
+- The `SessionStart` hook in `.claude/settings.json` injects the
+  `using-superpowers` skill at the start of each session; the other skills load
+  on demand via the `Skill` tool. Together they make the skills activate
+  automatically — no special command needed.
+- The vendored `session-start` hook was adapted to emit Claude Code's
+  `hookSpecificOutput` format when run as a project hook (it keys off
+  `CLAUDE_PROJECT_DIR`, since a repo-local hook has no `CLAUDE_PLUGIN_ROOT`).
+- To update, re-vendor from upstream (`obra/superpowers`, `skills/` and
+  `hooks/`) rather than editing skill files in place.
+- Antigravity users can alternatively install upstream directly with
+  `agy plugin install https://github.com/obra/superpowers`.
